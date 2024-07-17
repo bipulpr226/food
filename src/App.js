@@ -12,7 +12,7 @@ import { Outlet } from 'react-router-dom';
 const App = () => {
   return (
     <>
-   <Header/>;
+   <Header/>
 {/* <Ro   uterProvider router={appRouter}/> */}
 <Outlet/>
    <Footer/> 

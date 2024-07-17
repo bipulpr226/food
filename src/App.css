@@ -78,3 +78,16 @@ text-overflow: ellipsis;
     text-indent: 50px;
     
   }
+  p {
+    text-indent: 20px; /* Indent the first line */
+    padding-left: 30px; /* Create space for the second line */
+  }
+  .menu_container{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .info_container{
+    border:1px solid grey;
+    border-radius: 25px;
+  }

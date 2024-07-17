@@ -21,7 +21,6 @@
 <li><i className="fa-brands fa-square-instagram"></i></li>
 <li><i className="fa-brands fa-linkedin"></i></li>
 <li><i className="fa-brands fa-square-twitter"></i></li>
-
 </div>
 
 
