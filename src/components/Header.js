@@ -1,13 +1,16 @@
 import Logo from"../assets/images/resturant-removebg-preview.png"
 import { Link } from "react-router-dom";
-
+import useOnline from "../hooks/useOnline";
 const Header = () => {
+  const isOnline=useOnline();
+  console.log("online status",isOnline)
     return(
       <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand" to="">
       <img src={Logo} style={{width:"80px"}}/>
-        </a>
+      <span>{isOnline?"🟩":"🟥"}</span>
+        </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -29,6 +32,11 @@ const Header = () => {
               ContactUs📞
               </Link>
           </li>
+          <li className="nav-item">
+            <Link  to="/Instamart" className="nav-link" >
+              Instamart💐
+              </Link>
+              </li>
           <li className="nav-item">
             <Link  to="/cart" className="nav-link" >
               Cart🛒

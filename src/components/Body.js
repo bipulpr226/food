@@ -11,8 +11,8 @@ const Body = () =>{
       <Carousel/>
       <div className="d-flex justify-content-between">
         
-        <Searchbar/>
-        <Filter/>
+         {/* <Searchbar/>  */}
+        {/* <Filter/> */}
       </div>
      <Cardcontainer/>
      </>

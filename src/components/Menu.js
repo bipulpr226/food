@@ -4,44 +4,23 @@ import { useState, useEffect } from "react";
 import Resinfo from "./Resinfo";
 import Shimmer from "./Shimmer";
 import MenuSection from "./MenuSection";
+import useMenu from "../hooks/useMenu";
 export const Menu = () => {
 
-    //  const params = useParams();
+    
     const {id} = useParams();
-    // console.log('params', params);
-    const [menuData, setMenuData] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const getMenucard = async () => {
-        try {
-            const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`);
-            const json = await data.json();
-            setLoading(false)
-            setMenuData(json?.data?.cards)
-
-            console.log('json', json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-
-            // setLoading(false);
-            // console.log("json",json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
-            // setRestaurantData(json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
-            // setRestaurantCollection(json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants)
-        }
-        catch (err) {
-            //   setLoading(false)
-            //   setIsFailed(true)
-            console.log("something went wrong", err)
-        }
-    }
-    useEffect(() => {
-        getMenucard();
-    }, [])
-    if (loading) {
+    
+    const menuList =useMenu(id);
+    console.log("custom hook data",menuList);
+//const menuList = useMenu();
+  
+    if (menuList.length===0) {
         return (
             <div className="container d-flex flex-wrap gap-4">
                 <Shimmer />
             </div>)
     }
-    const menuCategories=menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+    const menuCategories=menuList[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
     const normalMenu= menuCategories.filter((menuCategory)=>{
         return(
             menuCategory?.card?.card["@type"]=== 
@@ -56,7 +35,7 @@ export const Menu = () => {
     });
     console.log("normalMenu",normalMenu);
     console.log("nestedMenu", nestedMenu);
-    const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines, sla, expectationNotifiers } = menuData[2]?.card?.card?.info
+    const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines, sla, expectationNotifiers } = menuList[2]?.card?.card?.info
     const { slaString, lastMileTravelString } = sla;
     const { enrichedText } = expectationNotifiers[0]
     return (

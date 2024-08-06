@@ -6,6 +6,12 @@ import Body from "./Body";
 import App from '../App';
 import ErrorPage from "./ErrorPage";
 import { Menu } from "./Menu";
+import { lazy,Suspense } from "react";
+import Shimmer from "./Shimmer";
+
+
+
+const Instamart = lazy(()=>import("./Instamart"))
 const appRouter=createBrowserRouter([
     {
         path:"/",
@@ -37,6 +43,12 @@ const appRouter=createBrowserRouter([
     path:"menu/:id",
     element:<Menu/>
     
+},
+{
+   path:"instamart" ,
+   element:<Suspense fallback={<Shimmer/>}>
+    <Instamart/>
+    </Suspense>
 } ]
     }
 ]);
