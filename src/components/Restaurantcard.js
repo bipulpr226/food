@@ -1,6 +1,10 @@
 import { IMG_URL } from "../const/config";
 import { Link } from "react-router-dom";
-const Restaurantcard = ({cloudinaryImageId,name,sla,avgRating,cuisines,areaName,id}) =>{
+
+
+const Restaurantcard = ({cloudinaryImageId,name,sla,avgRating,cuisines,areaName,id,designer}) =>{
+console.log("designer name is", designer);
+
  // imgUrl, title, starRating, deliveryTime, cuisines, location
 //  console.log("props",props);
     return(
@@ -28,6 +32,7 @@ const Restaurantcard = ({cloudinaryImageId,name,sla,avgRating,cuisines,areaName,
       <div className="text-secondary">{cuisines.join(", ")}</div>
      
      <div>{areaName}</div> 
+     <div className="text-danger text-end">Designed by:{designer} </div>
      {/* <p>{areaName}</p> */}
      </div>
      

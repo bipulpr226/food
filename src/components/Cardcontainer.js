@@ -7,8 +7,8 @@ import Searchbar from "./Searchbar";
 import Filter from "./Filter";
 import useOnline from "../hooks/useOnline";
 
-const Cardcontainer = () => {
- 
+const Cardcontainer = ({author}) => {
+ const isOnline = useOnline();
 
   const [count, setcount] = useState(0)
   const [restaurantData, setRestaurantData] = useState([]);
@@ -113,6 +113,7 @@ const Cardcontainer = () => {
               key={restaurant?.info?.id}
 
               {...restaurant?.info}
+              designer={author}
             />
           );
 

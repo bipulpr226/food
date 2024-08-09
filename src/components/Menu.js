@@ -5,6 +5,8 @@ import Resinfo from "./Resinfo";
 import Shimmer from "./Shimmer";
 import MenuSection from "./MenuSection";
 import useMenu from "../hooks/useMenu";
+import NormalMenu from "./NormalMenu";
+import NestedMenu from "./NestedMenu";
 export const Menu = () => {
 
     
@@ -13,7 +15,7 @@ export const Menu = () => {
     const menuList =useMenu(id);
     console.log("custom hook data",menuList);
 //const menuList = useMenu();
-  
+  const [activeIndex,setActiveIndex]=useState(0);
     if (menuList.length===0) {
         return (
             <div className="container d-flex flex-wrap gap-4">
@@ -37,7 +39,16 @@ export const Menu = () => {
     console.log("nestedMenu", nestedMenu);
     const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines, sla, expectationNotifiers } = menuList[2]?.card?.card?.info
     const { slaString, lastMileTravelString } = sla;
-    const { enrichedText } = expectationNotifiers[0]
+    const { enrichedText } = expectationNotifiers[0];
+    const showDetails = (val)=>
+        {if (activeIndex===val){
+        setActiveIndex(-1)
+    }
+    else
+    {
+        setActiveIndex(val);
+    }
+    }
     return (
         <div>
             <Resinfo 
@@ -50,102 +61,29 @@ export const Menu = () => {
                 distance={lastMileTravelString}
                 remark={enrichedText} />
                 <div className="space menu_container p-3">
-                    {
-normalMenu.map((normalCategory)=>{
+                     {normalMenu.map((normalCategory,index)=>{
 return(
-<>
-<h5 key={normalCategory?.card?.card?.title}>{normalCategory?.card?.card?.title}</h5>
-{
-normalCategory?.card?.card?.itemCards.map((dish)=>{
-return(
-    <>
-    <MenuSection
-isVeg={dish?.card?.info?.isVeg}
- name={dish?.card?.info?.name}
- costForTwo={dish?.card?.info?.defaultPrice/100 || dish?.card?.info?.price/100 }
- avgRating={dish?.card?.info?.ratings?.aggregatedRating?.rating}
- ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
- description={dish?.card?.info?.description}
- imageUrl ={dish?.card?.info?.imageId}
 
-
-
-/>
-<hr/>
-</>
-
-)
+<NormalMenu normalCollection={normalCategory} isActive={activeIndex===index} toggleFunction={()=>showDetails(index)}/>
+);
 
 })
-}
-{/* <MenuSection
-isVeg={normalCategory?.card?.card?.itemCards[0]?.card?.info?.isVeg}
- name={normalCategory?.card?.card?.itemCards[0]?.card?.info?.isVeg?.name}
- costForTwo={normalCategory?.card?.card?.itemCards[0]?.card?.info?.defaultPrice/100}
- avgRating={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.rating}
- ratingCount={normalCategory?.card?.card?.itemCards[0]?.card?.info?.ratings?.aggregatedRating?.ratingCount}
- description={normalCategory?.card?.card?.itemCards[0]?.card?.info?.description}
- imageUrl ={normalCategory?.card?.card?.itemCards[0]?.card?.info?.imageId}
+ } 
 
+                </div>
+                <div className="space menu_container p-3">
 
-
-/> */}
-</>
-
-)
-
-})
-
-
-                    }
-                
-                <div>
 {
     nestedMenu.map((category)=>{
 return(
-    <div>
-    <h4 className="space">{category?.card?.card?.title}</h4>
-    {
-        category?.card?.card?.categories.map((subCategory)=>{
-return(
-    <>
-    <h5 className="text-secondary space">{subCategory?.title}</h5>
-    {
-subCategory?.itemCards.map((dish)=>{
-return(
-    <>
-    <MenuSection
-    isVeg={dish?.card?.info?.isVeg}
-     name={dish?.card?.info?.name}
-     costForTwo={dish?.card?.info?.defaultPrice/100 || dish?.card?.info?.price/100 }
-     avgRating={dish?.card?.info?.ratings?.aggregatedRating?.rating}
-     ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
-     description={dish?.card?.info?.description}
-     imageUrl ={dish?.card?.info?.imageId}
-    />
-    <hr/>
-    </>
-)
-
-
-})
-
-    }
-    </>
-    
-)
-
-
-        })
-    }
-    </div>
+   <NestedMenu collection={category}/>
 )
 
     })
 }
 
                 </div>
-</div>
+{/* </div> */}
         </div>
 
     )

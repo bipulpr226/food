@@ -2,9 +2,10 @@ import Carousel from "./Carousel";
 import Filter from "./Filter";
 import Searchbar from "./Searchbar";
 import Cardcontainer from "./Cardcontainer";
-
-
+import { Outlet } from "react-router-dom";
+import { useState } from "react";
 const Body = () =>{
+  const [name, setName] = useState("Bipul")
     return(
       <>
       <div className="text-center"> </div>
@@ -14,7 +15,7 @@ const Body = () =>{
          {/* <Searchbar/>  */}
         {/* <Filter/> */}
       </div>
-     <Cardcontainer/>
+     <Cardcontainer author={name}/>
      </>
     );
     
