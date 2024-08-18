@@ -32,7 +32,7 @@ console.log("designer name is", designer);
       <div className="text-secondary">{cuisines.join(", ")}</div>
      
      <div>{areaName}</div> 
-     <div className="text-danger text-end">Designed by:{designer} </div>
+     <div> </div>
      {/* <p>{areaName}</p> */}
      </div>
      

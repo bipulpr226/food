@@ -1,8 +1,15 @@
 import Logo from"../assets/images/resturant-removebg-preview.png"
 import { Link } from "react-router-dom";
 import useOnline from "../hooks/useOnline";
+import UserContext from "../utils/UserContext";
+import {useContext} from 'react'
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const isOnline=useOnline();
+  const cartItems=useSelector((store)=>store.cart.items);
+  const userData = useContext(UserContext);
+  console.log("userData", userData);
   console.log("online status",isOnline)
     return(
       <nav className="navbar p-0 navbar-expand-sm bg-light navbar-light">
@@ -39,9 +46,10 @@ const Header = () => {
               </li>
           <li className="nav-item">
             <Link  to="/cart" className="nav-link" >
-              Cart🛒
+              Cart🛒- {cartItems.length} items
               </Link>
-          </li>    
+          </li>   
+         
         </ul>
       </div>
     </div>

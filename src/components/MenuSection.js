@@ -1,6 +1,6 @@
 import { IMG_URL, Menu_URL } from "../const/config"
 
-const MenuSection=({isVeg, name, costForTwo, avgRating, ratingCount, description, imageUrl })=>{
+const MenuSection=({isVeg, name, costForTwo, avgRating, ratingCount, description, imageUrl,handleAdd })=>{
 return(
     <div className="d-flex justify-content-between align-items-center">
 <div className="menu_container">
@@ -13,6 +13,8 @@ return(
 </div>
 <div>
     <img style={{width:"150px",height:"150px",objectFit:"cover",borderRadius:"20px" }} src={IMG_URL+imageUrl}/>
+<br></br>
+    <button class="button" onClick={handleAdd}>Add to cart</button>
 </div>
 
 

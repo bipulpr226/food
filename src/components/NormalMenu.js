@@ -1,9 +1,15 @@
 import MenuSection from "./MenuSection"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addItem } from "../utils/cartSlice"
 
 const NormalMenu=({normalCollection,isActive,toggleFunction,isNested})=>{
      const [showList, setShowList] = useState(false)
+const dispatch = useDispatch();
 
+const handleAddItem=(val)=>{
+  dispatch(addItem(val));
+}
         return(
         <>
         <h5 key={normalCollection?.card?.card?.title}className="bg-primary p-3"onClick={isNested ? ()=>setShowList(!showList) : toggleFunction}>
@@ -20,8 +26,7 @@ const NormalMenu=({normalCollection,isActive,toggleFunction,isNested})=>{
          ratingCount={dish?.card?.info?.ratings?.aggregatedRating?.ratingCount}
          description={dish?.card?.info?.description}
          imageUrl ={dish?.card?.info?.imageId}
-        
-        
+       
         
         />
         <hr/>
@@ -48,6 +53,8 @@ const NormalMenu=({normalCollection,isActive,toggleFunction,isNested})=>{
         }
         description={dish?.card?.info?.description}
         imageUrl={dish?.card?.info?.imageId}
+        handleAdd={()=>handleAddItem(dish.card.info)}
+        
         
       />
       <hr/>

@@ -79,3 +79,8 @@ text-overflow: ellipsis;
     border:1px solid grey;
     border-radius: 25px;
   }
+  .button{
+    background-color: #04AA6D;
+    border: green;
+    color: white;
+  }
