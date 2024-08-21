@@ -30,11 +30,11 @@ const Searchbar = ({collection ,updater}) =>{
         {/* <div>
           <button className="btn btn-sm-light" onClick={filterData}>🔍</button>
         </div> */}
-      <div>
-             <button className="btn btn-sm btn-light" onClick={handleDelivery}>Fast Delivery</button>
-             <button className="btn btn-sm btn-dark" onClick={handleVeg}>Pure Veg</button>
-             <button className="btn btn-sm btn-light" onClick={handleRating}>Top rated</button>
-             <button className="btn btn-sm btn-dark" onClick={reset}>Show all</button>
+      <div >
+             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-200 rounded" onClick={handleDelivery}>Quick Fast</button>
+             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={handleVeg}>Pure Veg</button>
+             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={handleRating}>Top rated</button>
+             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={reset}>Show all</button>
            </div>
            </div>
           

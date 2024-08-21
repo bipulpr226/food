@@ -12,6 +12,8 @@ import {useEffect, useState} from 'react'
 import UserContext from "./utils/UserContext";
 import { Provider } from 'react-redux';
 import appStore from './utils/store';
+import { Carousel } from 'bootstrap';
+
 
 const App = () => {
   const [name, setName] = useState("")
@@ -30,6 +32,7 @@ const App = () => {
     <Provider store={appStore}>
 <UserContext.Provider value={name}/>
    <Header/>
+   
 {/* <Ro   uterProvider router={appRouter}/> */}
 <Outlet/>
    <Footer/> 

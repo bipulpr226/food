@@ -44,12 +44,12 @@ const Filter = ({collection, updater}) =>{
     return(
       <div className="container my-4">
       <input type="text"
-        className="custom_input"
+        className="custom_input border-2 border-rose-500"
         placeholder="Enter name of restaurant"
         value={searchtext}
         onChange={handleSearchText} />
         <div>
-      <button className="btn btn-sm btn-light" onClick={filterData}>🔍</button></div>
+      <button className="btn btn-bg btn-light " onClick={filterData}>🔍</button></div>
     </div>
     // <div className="d-flex justify-between">
     //  <div>

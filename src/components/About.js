@@ -3,7 +3,7 @@ import User from "./User";
 const About = () =>{
     return(
       <>
-      <UserClass/>
+      
       <User/>
       
       </>
