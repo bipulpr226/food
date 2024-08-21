@@ -20,12 +20,12 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-6">About Us</h1>
         <p className="max-w-2xl mx-auto text-lg text-gray-700 mb-10">
-          Welcome to [Your Company Name]. We are passionate about [your mission or field]. Our
-          journey began in [Year], and since then, we have been committed to [your mission].
+          Welcome to Foodie app. We are passionate about very qick time sevices. Our
+          journey began in 2024, and since then, we have been committed to Start.
         </p>
         <p className="max-w-2xl mx-auto text-lg text-gray-700 mb-16">
-          Our values include [Value 1], [Value 2], and [Value 3]. We strive to create a positive
-          impact through our work and collaborate with partners who share our vision.
+           We strive to create a positive
+          impact through our work and your response who share our vision.
         </p>
       </div>
 

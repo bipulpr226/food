@@ -34,8 +34,8 @@ import {useState,useEffect} from "react";
         <div className="flex gap-2">
             <div onClick={handlePrev} className={` cursor-pointer rounded-full w-8 h-8 flex justify-center item-center ` + (data <= 0 ? "bg-gray-100":"bg-gray-200")}>
             <FaArrowLeft className={` text-xl mt-1 `+ (data <= 0 ? "text-gray-200":"text-gray-800")}/></div>
-            <div onClick={handleNext} className={` cursor-pointer rounded-full w-8 h-8 flex justify-center item-center ` + (data >= 31 ? "bg-gray-100":"bg-gray-200")}>
-            <FaArrowRight className={` text-xl mt-1 `+ (data >= 31 ? "text-gray-200":"text-gray-800")}/></div>
+            <div onClick={handleNext} className={` cursor-pointer rounded-full w-8 h-8 flex justify-center item-center ` + (data >=0 ? "bg-gray-100":"bg-gray-200")}>
+            <FaArrowRight className={` text-xl mt-1 `+ (data >= 0 ? "text-gray-200":"text-gray-800")}/></div>
         </div>
       </div>
       <hr/>
