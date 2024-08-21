@@ -21,8 +21,9 @@ const footer =() =>{
           <ul className="flex justify-center space-x-4">
             <li><a href="#" className="hover:text-gray-400">Home</a></li>
             <li><a href="#" className="hover:text-gray-400">About</a></li>
-            <li><a href="#" className="hover:text-gray-400">Services</a></li>
             <li><a href="#" className="hover:text-gray-400">Contact</a></li>
+            <li><a href="#" className="hover:text-gray-400">Cart</a></li>
+            <li><a href="#" className="hover:text-gray-400">Instamart</a></li>
           </ul>
         </div>
         <div className="w-full md:w-1/3 text-center md:text-right">
