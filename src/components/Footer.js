@@ -1,31 +1,58 @@
 import { SiIfood } from "react-icons/si";
-import Logo from"../assets/images/resturant-removebg-preview.png"
-import { MdAddLocationAlt } from "react-icons/md";
-import { FaInstagramSquare } from "react-icons/fa";
-import { BsWhatsapp } from "react-icons/bs";
-import { AiOutlineFacebook } from "react-icons/ai";
+// import Logo from"../assets/images/resturant-removebg-preview.png"
+// import { MdAddLocationAlt } from "react-icons/md";
+// import { FaInstagramSquare } from "react-icons/fa";
+// import { BsWhatsapp } from "react-icons/bs";
+// import { AiOutlineFacebook } from "react-icons/ai";
+import React from 'react';
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const footer =() =>{
 	return(
-   <div className="footer  bg-dark text-light mt-5 px-5">
-   <div className="container " >
-    <img className="icon" src={Logo} width="100px"/>
-    <h3 className="font-bold text-size-30px ">FOOD</h3>
-    <p>ContactUs📞:9087654321</p>
-    <div className="flex justify-center item-center gap-2">
-    <p>EmailUs: foodie@123gmail.com</p>
-    </div>
-    </div>
-    <div className="p-3 text-light container "> 
-    
-< div className="d-flex justify-center gap-3 ">
-< FaInstagramSquare fontSize={50}/>
-<BsWhatsapp fontSize={50}/>
-< AiOutlineFacebook fontSize={50} />
 
-</div>
+    <footer className="bg-gray-800 text-white py-6">
+    <div className="container mx-auto px-4">
+      <div className="flex flex-wrap justify-between items-center">
+        <div className="w-full md:w-1/3 mb-4 md:mb-0">
+          <h3 className="text-lg font-semibold">Foodie</h3>
+          <p className="text-sm">© 2024 Foodie. All rights reserved.</p>
+        </div>
+        <div className="w-full md:w-1/3 mb-4 md:mb-0 text-center">
+          <ul className="flex justify-center space-x-4">
+            <li><a href="#" className="hover:text-gray-400">Home</a></li>
+            <li><a href="#" className="hover:text-gray-400">About</a></li>
+            <li><a href="#" className="hover:text-gray-400">Services</a></li>
+            <li><a href="#" className="hover:text-gray-400">Contact</a></li>
+          </ul>
+        </div>
+        <div className="w-full md:w-1/3 text-center md:text-right">
+          <p className="text-sm">Follow us on:</p>
+          <ul className="flex justify-center md:justify-end space-x-4">
+            <li>
+              <a href="#" className="hover:text-gray-400">
+                <FaTwitter />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-gray-400">
+                <FaFacebookF />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-gray-400">
+                <FaInstagram />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-gray-400">
+                <FaLinkedinIn />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
+  </footer>
 		)
 }
 
