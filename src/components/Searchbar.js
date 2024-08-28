@@ -25,18 +25,16 @@ const Searchbar = ({collection ,updater}) =>{
       updater(collection)
     }
     return(
-      <div>
+      <div className="container  d-flex gap-3 text-black " >
 
-        {/* <div>
-          <button className="btn btn-sm-light" onClick={filterData}>🔍</button>
-        </div> */}
-      <div >
-             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-200 rounded" onClick={handleDelivery}>Quick Fast</button>
-             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={handleVeg}>Pure Veg</button>
-             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={handleRating}>Top rated</button>
-             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={reset}>Show all</button>
+       
+      
+             <button className="bg-white rounded-xl left-5 text-lg text-green-700 font-bold px-2 py-2 drop-shadow" onClick={handleDelivery}>Quick Fast</button>
+             <button className="bg-white rounded-xl left-5 text-lg text-green-700 font-bold px-2 py-1 drop-shadow" onClick={handleVeg}>Pure Veg</button>
+             <button className="bg-white rounded-xl left-5 text-lg text-green-700 font-bold px-2 py-1 drop-shadow" onClick={handleRating}>Top rated</button>
+             <button className="bg-white rounded-xl left-5 text-lg text-green-700 font-bold px-2 py-1 drop-shadow" onClick={reset}>Show all</button>
            </div>
-           </div>
+           
           
        
     

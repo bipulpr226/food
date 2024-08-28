@@ -2,7 +2,7 @@ import MenuSection from "./MenuSection"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addItem } from "../utils/cartSlice"
-
+import { RxCaretDown } from "react-icons/rx";
 const NormalMenu=({normalCollection,isActive,toggleFunction,isNested})=>{
      const [showList, setShowList] = useState(false)
 const dispatch = useDispatch();
@@ -12,7 +12,8 @@ const handleAddItem=(val)=>{
 }
         return(
         <>
-        <h5 key={normalCollection?.card?.card?.title}className="bg-primary p-3"onClick={isNested ? ()=>setShowList(!showList) : toggleFunction}>
+        <h5 key={normalCollection?.card?.card?.title}className="bg-slate-300 p-3
+       { RxCaretDown} "onClick={isNested ? ()=>setShowList(!showList) : toggleFunction}>
             {isNested ? normalCollection?.title:normalCollection?.card?.card?.title}</h5>
         {isNested ? normalCollection?.itemCards.map((dish)=>{
         return(

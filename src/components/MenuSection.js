@@ -11,10 +11,10 @@ return(
 <p className="p">{description}</p>
 
 </div>
-<div>
+<div  className="relative h-full w-[20%]">
     <img style={{width:"150px",height:"150px",objectFit:"cover",borderRadius:"20px" }} src={IMG_URL+imageUrl}/>
-<br></br>
-    <button class="button" onClick={handleAdd}>Add to cart</button>
+
+    <button class="bg-white rounded-xl absolute bottom-[-10px] left-5 text-lg text-black-700 font-bold px-4 py-2 drop-shadow"   type="button" onClick={handleAdd}> <h5 className=" fw-bold m-0 py-1 "> ADD</h5> </button>
 </div>
 
 
